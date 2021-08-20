@@ -1,21 +1,21 @@
 <template>
-  <div class="joinedGroups">
+  <div class = "joinedGroups">
     <!-- SHOW JOINED GROUPS -->
     <div v-for="joined_group in joined_groups" v-bind:key="joined_group.id">
       <p>{{ joined_group.group.name }}</p>
       <button v-on:click="showGroup(joined_group)">More info</button>
       <hr>
     </div>
-    <!-- SHOW JOINED GROUP INFO -->
+    <!-- SHOW JOINED GROUP INFO / LEAVE GROUP -->
     <dialog id="joinedGroup-details">
       <form method="dialog">
         <h1>Group Info</h1>
-        <p>Group Name: {{ currentGroup.group.name }}</p>
-        <p>Subject: {{ currentGroup.group.subject }}</p>
+        <p>Group Name: {{ currentGroup.group.name }}</p> 
+        <p>Subject: {{ currentGroup.group.subject }}</p> 
         <p>Zipcode/Location: {{ currentGroup.group.zipcode }}</p>
-        <p>Maximum Number of Students: {{ currentGroup.group.max_students }}</p>
+        <p>Maximum Number of Students: {{ currentGroup.group.max_students }}</p> 
         <p>Owner ID: {{ currentGroup.group.user_id }}</p>
-        <p>Group Description: {{ currentGroup.group.description }}</p>        
+        <p>Group Description: {{ currentGroup.group.description }}</p>
         <button v-on:click="destroyGroup(currentGroup)">Leave Group</button> |
         <button>Close</button>
       </form>
@@ -31,7 +31,7 @@ export default {
   data: function () {
     return {
       joined_groups: [],
-      currentGroup: {},
+      currentGroup: { group: {} },
     };
   },
   created: function () {

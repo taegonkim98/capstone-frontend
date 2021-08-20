@@ -1,6 +1,7 @@
 <template>
   <div class="groups">
     <!-- SHOW GROUP INFO -->
+    {{ groups }}
     <div v-for="group in groups" v-bind:key="group.id">
       <p>{{ group.name }}</p>
       <p>{{ group.description }}</p>
@@ -48,7 +49,7 @@ export default {
     return {
       groups: [],
       currentGroup: {},
-      joinedGroups: { status: joined, group_id: this.$router },
+      joinedGroups: { status: "joined", group_id: this.$route.params.id },
     };
   },
   created: function () {
@@ -78,12 +79,14 @@ export default {
         });
     },
     joinGroup: function (group) {
-      this.currentGroup = group;
+      var params = {
+        status: "joined",
+        group_id: group.id,
+      };
       axios
-        .patch("/joined_groups" + group.id, joinedGroups)
+        .post("/joined_groups", params)
         .then((response) => {
           console.log("join group", response);
-          this.currentGroup = {};
         })
         .catch((error) => {
           console.log("join group error", error.response);

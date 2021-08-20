@@ -46,7 +46,7 @@ const routes = [
     component: Logout
   },
   {
-    path: '/mygroups',
+    path: '/myGroups',
     component: joinedGroups
   },
   {
