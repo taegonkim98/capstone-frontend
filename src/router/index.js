@@ -7,6 +7,7 @@ import Logout from "../views/Logout.vue"
 import Home from "../views/Home.vue"
 import joinedGroups from "../views/joinedGroups.vue"
 import createGroup from "../views/createGroup.vue"
+import groupsShow from "../views/GroupsShow.vue"
 
 
 Vue.use(VueRouter)
@@ -53,6 +54,10 @@ const routes = [
     path: '/groups/new',
     component: createGroup
   },
+  {
+    path: '/groups/:id',
+    component: groupsShow
+  }
 ]
 
 const router = new VueRouter({

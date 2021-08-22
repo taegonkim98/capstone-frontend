@@ -1,9 +1,9 @@
 <template>
   <div class="groups">
     <!-- SHOW GROUP INFO -->
-    {{ groups }}
-    <div v-for="group in groups" v-bind:key="group.id">
-      <p>{{ group.name }}</p>
+    <p>Search Group Name: <input v-model="searchTerm"></p>
+    <div v-for="group in filterBy(groups, searchTerm) ">
+      <p>{{ group.name }}</p> 
       <p>{{ group.description }}</p>
       <button v-on:click="showGroup(group)">More info</button>
       <hr>
@@ -44,12 +44,16 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
+
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function () {
     return {
       groups: [],
       currentGroup: {},
       joinedGroups: { status: "joined", group_id: this.$route.params.id },
+      searchTerm: "",
     };
   },
   created: function () {

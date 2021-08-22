@@ -1,15 +1,16 @@
 <template>
   <div class = "joinedGroups">
     <!-- SHOW JOINED GROUPS -->
-    <div v-for="joined_group in joined_groups" v-bind:key="joined_group.id">
-      <p>{{ joined_group.group.name }}</p>
+    <p>Search: <input v-model="searchTerm"></p>
+    <div v-for="joined_group in filterBy(joined_groups, searchTerm) ">
+      <p v-on:click="goToShow(joined_group)">{{ joined_group.group.name }}</p>
       <button v-on:click="showGroup(joined_group)">More info</button>
       <hr>
     </div>
     <!-- SHOW JOINED GROUP INFO / LEAVE GROUP -->
     <dialog id="joinedGroup-details">
       <form method="dialog">
-        <h1>Group Info</h1>
+        <h1>Group Information</h1>
         <p>Group Name: {{ currentGroup.group.name }}</p> 
         <p>Subject: {{ currentGroup.group.subject }}</p> 
         <p>Zipcode/Location: {{ currentGroup.group.zipcode }}</p>
@@ -27,11 +28,15 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
+
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function () {
     return {
       joined_groups: [],
       currentGroup: { group: {} },
+      searchTerm: "",
     };
   },
   created: function () {
@@ -54,6 +59,9 @@ export default {
         var index = this.joined_groups.indexOf(joined_group);
         this.joined_groups.splice(index, 1);
       });
+    },
+    goToShow: function (joined_group) {
+      this.$router.push(`/groups/${joined_group.group.id}`);
     },
   },
 };
