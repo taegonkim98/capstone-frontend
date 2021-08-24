@@ -1,5 +1,10 @@
 <template>
   <div class = "joinedGroups">
+    <br>
+    <br>
+    <br>
+    <br>
+    
     <!-- SHOW JOINED GROUPS -->
     <p>Search: <input v-model="searchTerm"></p>
     <div v-for="joined_group in filterBy(joined_groups, searchTerm) ">

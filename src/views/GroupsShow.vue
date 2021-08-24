@@ -1,8 +1,14 @@
 <template>
   <div class="home">
+    <br>
+    <br>
+    <br>
+    <br>
     <h1>{{ welcome }}</h1>
-    <div v-for="message in messages"> {{message.text}} </div>
-
+    <div v-for="message in messages"> {{ message.user.name }} :
+      {{message.text}} 
+    </div>
+    
     Chat:<input type="text" v-model="newMessage" />
     <button v-on:click="createMessage()">Send</button>
   </div>
@@ -41,7 +47,7 @@ export default {
         })
         .then((response) => {
           console.log("messages create", response);
-          this.photos.push(response.data);
+          this.messages.push(response.data);
           this.newMessage = "";
         })
         .catch((error) => {

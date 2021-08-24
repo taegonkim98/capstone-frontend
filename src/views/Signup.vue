@@ -1,5 +1,9 @@
 <template>
   <div class="signup">
+    <br>
+    <br>
+    <br>
+    <br>
     <form v-on:submit.prevent="submit()">
       <h1>Signup</h1>
       <ul>
@@ -42,7 +46,7 @@ export default {
         .post("/users", this.newUserParams)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/login");
+          this.$router.push("/signupConfirmation");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;

@@ -1,7 +1,12 @@
 <template>
   <div class="groups">
+    <br>
+    <br>
+    <br>
+    <br>
     <!-- SHOW GROUP INFO -->
-    <p>Search Group Name: <input v-model="searchTerm"></p>
+    <p>Search Group: <input v-model="searchTerm"></p>
+    <hr> 
     <div v-for="group in filterBy(groups, searchTerm) ">
       <p>{{ group.name }}</p> 
       <p>{{ group.description }}</p>
@@ -19,7 +24,7 @@
             Subject: <input type="text" v-model="currentGroup.subject" />
           </p>
           <p>
-            Zipcode: <input type="text" v-model="currentGroup.zipcode" />
+            Location/Zipcode: <input type="text" v-model="currentGroup.zipcode" />
           </p>
           <p>
             Maximum Number of Students: <input type="text" v-model="currentGroup.max_students" />

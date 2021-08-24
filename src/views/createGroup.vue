@@ -1,5 +1,10 @@
 <template>
   <div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3>Create your own study group now!</h3>
       <p>
         Group Name: <input type="text" v-model="newGroupParams.name" />
       </p>
@@ -11,9 +16,6 @@
       </p>
       <p>
         Maximum Number of Students: <input type="text" v-model="newGroupParams.max_students" />
-      </p>
-      <p>
-        Owner ID: <input type="text" v-model="newGroupParams.user_id" />
       </p>
       <p>
         Group Description: <input type="text" v-model="newGroupParams.description" />
@@ -39,6 +41,7 @@ export default {
           console.log("groups create", response);
           this.groups.push(response.data);
           this.newGroupParams = {};
+          this.$router.push("/groups");
         })
         .catch((error) => {
           console.log("groups create error", error.response);

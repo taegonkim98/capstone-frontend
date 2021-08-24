@@ -8,6 +8,7 @@ import Home from "../views/Home.vue"
 import joinedGroups from "../views/joinedGroups.vue"
 import createGroup from "../views/createGroup.vue"
 import groupsShow from "../views/GroupsShow.vue"
+import signupConfirmation from "../views/SignupConfirmation.vue"
 
 
 Vue.use(VueRouter)
@@ -57,6 +58,10 @@ const routes = [
   {
     path: '/groups/:id',
     component: groupsShow
+  },
+  {
+    path: '/signupConfirmation',
+    component: signupConfirmation
   }
 ]
 
