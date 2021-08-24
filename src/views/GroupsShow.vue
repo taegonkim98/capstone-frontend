@@ -8,7 +8,6 @@
     <div v-for="message in messages"> {{ message.user.name }} :
       {{message.text}} 
     </div>
-    
     Chat:<input type="text" v-model="newMessage" />
     <button v-on:click="createMessage()">Send</button>
   </div>
