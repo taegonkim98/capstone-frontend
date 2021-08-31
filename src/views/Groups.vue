@@ -6,6 +6,7 @@
     <br>
     <!-- SHOW GROUP INFO -->
     <p>Search Group: <input v-model="searchTerm"></p>
+    <button v-on:click="goToCreate()">Create Group</button>
     <hr> 
     <div v-for="group in filterBy(groups, searchTerm) ">
       <p>{{ group.name }}</p> 
@@ -107,6 +108,9 @@ export default {
         var index = this.groups.indexOf(group);
         this.groups.splice(index, 1);
       });
+    },
+    goToCreate: function () {
+      this.$router.push("/groups/new");
     },
   },
 };

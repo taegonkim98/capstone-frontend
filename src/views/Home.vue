@@ -84,7 +84,7 @@
                                     <div class="text-center">
                                         <i class="bi-camera icon-feature text-gradient d-block mb-3"></i>
                                         <h3 class="font-alt">Flexible Use</h3>
-                                        <p class="text-muted mb-0">Share your syllabi, study habits, preferred study times to time just the right study group members for you!</p>
+                                        <p class="text-muted mb-0">Share your study habits, preferred times and locations to find just the right study group members for you!</p>
                                     </div>
                                 </div>
                             </div>
@@ -144,8 +144,8 @@
             <div class="container px-5">
                 <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
                     <div class="col-12 col-lg-5">
-                        <h2 class="display-4 lh-1 mb-4">Enter a new age of social studying</h2>
-                        <p class="lead fw-normal text-muted mb-5 mb-lg-0">The world was hit with a pandemic that caused every student in almost every level to take courses remotely at their homes alone. Some people struggle to study alone and are too timid to reach out to people. Stoody allows students to create and join study groups in a very easy-to-use manner that makes possible for every student to meet new people and study efficiently even when alone.</p>
+                        <h2 class="display-4 lh-1 mb-4">Enter a New Age of Social Studying</h2>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0">The world was hit with a pandemic that caused every student in almost every level to take courses remotely at their homes alone. Some people struggle to study alone and are too timid to reach out to others. Stoody allows students to create and join study groups in a very easy-to-use manner that makes possible for every student to meet new people and study efficiently even when alone.</p>
                     </div>
                     <div class="col-sm-8 col-md-6">
                         <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" src="https://source.unsplash.com/u8Jn2rzYIps/900x900" alt="..." /></div>
@@ -153,7 +153,6 @@
                 </div>
             </div>
         </section>
-
 
   </div>
 </template>

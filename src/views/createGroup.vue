@@ -12,7 +12,7 @@
         Subject: <input type="text" v-model="newGroupParams.subject" />
       </p>
       <p>
-        Zipcode: <input type="text" v-model="newGroupParams.zipcode" />
+        Location/Zipcode: <input type="text" v-model="newGroupParams.zipcode" />
       </p>
       <p>
         Maximum Number of Students: <input type="text" v-model="newGroupParams.max_students" />
@@ -41,11 +41,11 @@ export default {
           console.log("groups create", response);
           this.groups.push(response.data);
           this.newGroupParams = {};
-          this.$router.push("/groups");
         })
         .catch((error) => {
           console.log("groups create error", error.response);
         });
+      this.$router.push("/groups");
     },
   },
 };
